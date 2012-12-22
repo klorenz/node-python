@@ -1,7 +1,18 @@
-node-python binding 
-======================
+# node-python binding 
 
-I bumped this up from "playground" to "binding" on account of it starting to feel like the
+python bridge for nodejs!
+
+Forked from [chrisdickinson/node-python](https://github.com/chrisdickinson/node-python) and updated to use node-gyp
+
+## Installation
+
+```npm install node-python```
+
+Tested on OSX 10.7.4 with node 0.8.15
+
+## Usage
+
+[I](https://github.com/chrisdickinson) bumped this up from "playground" to "binding" on account of it starting to feel like the
 right thing to do. 
 
 This is a binding between Node.js and Python; unfortunately as written it actually embeds a
@@ -31,19 +42,9 @@ you have to cast them from whatever they are into whatever you want them to be. 
 only provided cast is "toString", but that should change in the near future (hopefully).
 
 Passing python objects that you get from calling python functions from javascript can seamlessly
-be passed back into python functions (no casting required). Currently there's what I assume to be
+be passed back into python functions (no casting required). Currently there's what [I](https://github.com/chrisdickinson) assume to be
 a passable argument translation implementation for simple Objects (ones that act like dicts), 
 Arrays, Numbers (maybe?), and Strings.
 
 You can slap together a tiny WSGI hosting thing on it, as well, which is provided in `wsgi.js`.
-It's half implemented, but it's midnight on a Sunday and I should probably sleep.
-
-Installation
------------- 
-
-I've only tested this out on my computer so no huge promises can be made about other platforms.
-Running OSX 10.6.3:
-
-    node-waf configure build
-
-In theory this is all you need in the entire world.
+It's half implemented, but it's midnight on a Sunday and [I](https://github.com/chrisdickinson) should probably sleep.

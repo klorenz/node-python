@@ -1,5 +1,31 @@
-{ "name" : "node_test"
-, "version" : "0.0.1"
-, "description" : "playing around with node"
-, "author": "Chris Dickinson"
+{
+  "name": "node-python",
+  "version": "0.0.2",
+  "description": "Call python stuff from nodejs",
+  "main": "index.js",
+  "scripts": {
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JeanSebTr/node-python.git"
+  },
+  "keywords": [
+    "python",
+    "bridge"
+  ],
+  "author": {
+    "name": "Jean-Sébastien Tremblay",
+    "email": "jeansebtr@xpensia.com",
+    "url": "http://blog.jeansebtr.com"
+  },
+  "contributors": [
+    {
+      "name": "Chris Dickinson",
+      "email": "chris@neversaw.us"
+    }
+  ],
+  "license": "BSD",
+  "gypfile": true,
+  "readmeFilename": "README.md"
 }
