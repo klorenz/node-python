@@ -3,9 +3,6 @@
   "version": "0.0.2",
   "description": "Call python stuff from nodejs",
   "main": "index.js",
-  "scripts": {
-    "install": "node-gyp rebuild"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/JeanSebTr/node-python.git"

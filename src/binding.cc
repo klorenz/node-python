@@ -11,9 +11,13 @@
 using namespace v8;
 using std::string;
 
-#include <python2.6/Python.h>
+#include <Python.h>
 #include <node_object_wrap.h>
+
 using namespace node;
+
+
+#include "utils.h"
 
 class PyObjectWrapper : public ObjectWrap {
     PyObject* mPyObject;
@@ -235,12 +239,7 @@ class PyObjectWrapper : public ObjectWrap {
             PyObject* result = PyObject_CallObject(mPyObject, args_tuple);
             Py_XDECREF(args_tuple);
             if(!result) {
-                PyErr_Clear();
-                return ThrowException(
-                    Exception::Error(
-                        String::New("Python exception")
-                    )
-                );
+                return ThrowPythonException();
             } else {
                 RETURN_NEW_PYOBJ(scope, result);
             }
@@ -272,4 +271,4 @@ init (Handle<Object> target) {
     Py_Initialize();
     PyObjectWrapper::Initialize(target);
 }
-
+NODE_MODULE(binding, init)
