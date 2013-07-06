@@ -1,12 +1,13 @@
 {
   "name": "node-python",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Call python stuff from nodejs",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/JeanSebTr/node-python.git"
   },
+  "bugs": "https://github.com/JeanSebTr/node-python/issues",
   "keywords": [
     "python",
     "bridge"
@@ -22,6 +23,9 @@
       "email": "chris@neversaw.us"
     }
   ],
+  "scripts": {
+    "test": "node test/linker.js"
+  },
   "license": "BSD",
   "gypfile": true,
   "readmeFilename": "README.md"
