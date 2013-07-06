@@ -1,7 +1,3 @@
-// binding.cc
-
-#include <string>
-#include <iostream>
 
 #include <node.h>
 #include <Python.h>
