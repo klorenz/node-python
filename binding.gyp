@@ -21,8 +21,8 @@
           "cflags": [
             "<!(python-config --cflags)"
           ],
-          "ldflags": [
-            "<!(python-config --ldflags)"
+          "libraries": [
+            "<!(python-config --libs)"
           ]
         }]
       ]
