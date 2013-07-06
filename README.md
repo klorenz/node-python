@@ -2,51 +2,62 @@
 
 python bridge for nodejs!
 
-[![Build Status](https://travis-ci.org/JeanSebTr/node-python.png)](https://travis-ci.org/JeanSebTr/node-python)
+Hyper-beta, don't hesitate to try and report bugs!
 
-Forked from [chrisdickinson/node-python](https://github.com/chrisdickinson/node-python) and updated to use node-gyp
+[![Build Status](https://travis-ci.org/JeanSebTr/node-python.png)](https://travis-ci.org/JeanSebTr/node-python)
 
 ## Installation
 
 ```npm install node-python```
 
-Tested on OSX 10.7.4 with node 0.8.15
-
 ## Usage
 
-[I](https://github.com/chrisdickinson) bumped this up from "playground" to "binding" on account of it starting to feel like the
-right thing to do. 
+```javascript
 
-This is a binding between Node.js and Python; unfortunately as written it actually embeds a
-python process inside of Node. It's of extremely alpha quality and was originally written with
-the intent of getting a better understanding of the internals of both V8 and CPython.
+// python stuff
+var python = require('node-python');
+var os = python.import('os');
 
-But, yeah, okay. So the cool things:
+// nodejs stuff
+var path = require('path');
 
-    var sys = require('sys');
-    var python = require('./binding');
-    var pysys = python.import('sys');
-    sys.puts(pysys.toString());
+assert(os.path.basename(os.getcwd()) == path.basename(process.cwd()))
 
-Will output python's `sys.path`. And passing in arguments works, too:
+```
 
-    var python = require('./binding'),
-    os = python.import('os'),
-    cwd = os.getcwd(),
-    basename = os.path.basename(cwd);
+You should now go have fun with that and make it brokes :)
 
-    var sys = require('sys');
+## Current status
 
-    sys.puts(basename.toString());
+What should work:
 
-Unfortunately Python objects are not really fully translated into native Javascript objects yet;
-you have to cast them from whatever they are into whatever you want them to be. At the moment, the
-only provided cast is "toString", but that should change in the near future (hopefully).
+* Conversion between None and Undefined
+* Conversion between Python's and Node's Boolean
+* Conversion between Python's and Node's String
+* Calling python functions from node
+* Conversion from Python's Array to Node's Array
 
-Passing python objects that you get from calling python functions from javascript can seamlessly
-be passed back into python functions (no casting required). Currently there's what [I](https://github.com/chrisdickinson) assume to be
-a passable argument translation implementation for simple Objects (ones that act like dicts), 
-Arrays, Numbers (maybe?), and Strings.
+What may be broken:
 
-You can slap together a tiny WSGI hosting thing on it, as well, which is provided in `wsgi.js`.
-It's half implemented, but it's midnight on a Sunday and [I](https://github.com/chrisdickinson) should probably sleep.
+* Losing precision from Python's 64 bits Integer to Node's Number
+
+What's to be done:
+
+* Conversion from Node's Array to Python's Array
+* Pass javascript object to python
+* Call javascript function from python
+
+What would be realy awesome:
+
+* Proper object introspection
+
+
+## History
+
+* **v0.0.3** : 2013-07-06
+  - Refactor
+  - Better type conversion & error handling
+  - Compilation now properly working on both OSX and Linux. Windows compilation _may_ work too
+* **v0.0.2** : 2012-12-21
+  - Forked from [chrisdickinson/node-python](https://github.com/chrisdickinson/node-python)
+  - Compilation with node-gyp
