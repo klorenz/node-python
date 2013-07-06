@@ -9,14 +9,21 @@
       ],
       "conditions": [
         ['OS=="mac"', {
-          "include_dirs": [
-            "$(SDKROOT)/System/Library/Frameworks/Python.framework/Versions/Current/Headers"
+            "xcode_settings": {
+              "OTHER_CFLAGS": [
+                "<!(python-config --cflags)"
+              ],
+              "OTHER_LDFLAGS": [
+                "<!(python-config --ldflags)"
+              ]
+            }
+        }, { # not OSX
+          "cflags": [
+            "<!(python-config --cflags)"
           ],
-          "link_settings": {
-            "libraries": [
-              "$(SDKROOT)/System/Library/Frameworks/Python.framework"
-            ]
-          }
+          "ldflags": [
+            "<!(python-config --ldflags)"
+          ]
         }]
       ]
     }
