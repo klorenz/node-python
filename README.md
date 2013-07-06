@@ -2,6 +2,8 @@
 
 python bridge for nodejs!
 
+[![Build Status](https://travis-ci.org/[JeanSebTr]/[node-python].png)](https://travis-ci.org/[JeanSebTr]/[node-python])
+
 Forked from [chrisdickinson/node-python](https://github.com/chrisdickinson/node-python) and updated to use node-gyp
 
 ## Installation
