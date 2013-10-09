@@ -40,6 +40,7 @@ What should work:
 What may be broken:
 
 * Losing precision from Python's 64 bits Integer to Node's Number
+* If you're using node v0.6.x (please upgrade) you'll have to manually compile with node-gyp
 
 What's to be done:
 
@@ -54,6 +55,8 @@ What would be realy awesome:
 
 ## History
 
+* **v0.0.4** : 2013-10-09
+  - use the bindings module to load the native extension
 * **v0.0.3** : 2013-07-06
   - Refactor
   - Better type conversion & error handling

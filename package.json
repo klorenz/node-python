@@ -1,6 +1,6 @@
 {
   "name": "node-python",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Call python stuff from nodejs",
   "main": "index.js",
   "repository": {
@@ -28,5 +28,8 @@
   },
   "license": "BSD",
   "gypfile": true,
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "bindings": "~1.1.1"
+  }
 }
