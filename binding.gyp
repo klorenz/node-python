@@ -9,7 +9,7 @@
       ],
       "ldflags": [
         '-Xlinker -export-dynamic'
-      ]
+      ],
       "conditions": [
         ['OS=="mac"', {
             "xcode_settings": {
