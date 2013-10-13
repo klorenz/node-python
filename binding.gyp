@@ -7,6 +7,9 @@
         "src/utils.cc",
         "src/py_object_wrapper.cc"
       ],
+      "ldflags": [
+        '-Xlinker -export-dynamic'
+      ]
       "conditions": [
         ['OS=="mac"', {
             "xcode_settings": {
